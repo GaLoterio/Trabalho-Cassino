@@ -2,7 +2,7 @@ import javax.swing.JOptionPane;
 import java.util.Random;
 
 public class BlackJack {
-    public void Jogar() {
+    public static void main(String[] args) {
 
         String[] nipes = { "♠", "♥", "♦", "♣" };
         String[] faces = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
@@ -15,7 +15,12 @@ public class BlackJack {
             String face = faces[(int) (Math.random() * faces.length)];
             total = face + nipe;
             total2 = face;
-            JOptionPane.showMessageDialog(null, "Sua mão é " + total);
+            if (i == 1) {
+                JOptionPane.showMessageDialog(null, "Sua primeira carta é " + total);
+            } else {
+                JOptionPane.showMessageDialog(null, "Sua segunda carta é " + total);
+            }
+
         }
 
         Random random = new Random();
