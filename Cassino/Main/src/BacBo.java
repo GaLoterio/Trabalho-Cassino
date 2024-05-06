@@ -86,7 +86,7 @@ public class BacBo {
         }
 
         System.out.println("Fechando Bac Bo...");
-        TimeUnit.SECONDS.sleep(2);
+        //TimeUnit.SECONDS.sleep(2);
     }
 
 }
