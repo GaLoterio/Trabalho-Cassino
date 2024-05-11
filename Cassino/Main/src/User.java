@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class User {
     String nome;
-    double saldo = 0;
+    double saldo = 1000;
     Scanner sc = new Scanner(System.in);
 
     public User(String nome) {

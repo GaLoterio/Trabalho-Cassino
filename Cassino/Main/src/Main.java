@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+
 public class Main {
     public static void main(String[] args) throws Exception {
 
@@ -34,7 +35,8 @@ public class Main {
             switch (escolha) {
                 case 1:
                     System.out.println("Abrindo Black jack...");
-
+                    BlackJack.main(args);
+                    
                     break;
                 case 2:
                     System.out.println("Abrindo Bac bo...");
