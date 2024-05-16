@@ -25,9 +25,13 @@ public class BlackJack {
            valorAposta = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor de aposta inválido, insira um valor válido:"));
         }
 
-        double novoValor = jogador1.saldo - valorAposta;
+        //Atualiza o saldo do jogador apos a aposta
+
+        //double novoValor = jogador1.saldo - valorAposta;
+        jogador1.saldo -= valorAposta;
+
         double dobrarAposta = valorAposta * 2;
-        double perdeuAposta = valorAposta - valorAposta;
+        double perdeuAposta = valorAposta;
         double empateAposta = valorAposta / 2; 
 
         for (int i = 1; i <= contador; i++) {
@@ -68,25 +72,25 @@ public class BlackJack {
 
         if (maoJogador == 21){
             mensagem = "Jogador ganhou!"+" R$" +dobrarAposta;
-            novoValor += dobrarAposta;
+            
         } else if(maoJogador > 21){
             mensagem = "Você estourou!"+" R$" +perdeuAposta;
-            novoValor -= perdeuAposta;
+            
         } else if(diferencaJ > diferencaD) {
             mensagem = "Distribuidor ganhou";
-            novoValor -= perdeuAposta;
+            
         } else if (diferencaJ == diferencaD) {
             mensagem = "Empate"+" R$" +empateAposta;
-            novoValor -= empateAposta;
+            
         } else {
             mensagem = "Jogador ganhou"+" R$" +dobrarAposta;
-            novoValor += dobrarAposta;
+            
 
         }
 
         JOptionPane.showMessageDialog(null, "A mão do distribuidor é " + maoDistribuidor);
         JOptionPane.showMessageDialog(null, mensagem);
-        JOptionPane.showMessageDialog(null, "Seu saldo agora é " +novoValor);
+        JOptionPane.showMessageDialog(null, "Seu saldo agora é " + jogador1.saldo);
 
     }
 

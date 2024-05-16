@@ -1,36 +1,36 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class User {
     String nome;
     double saldo = 1000;
-    Scanner sc = new Scanner(System.in);
+    double valor;
 
     public User(String nome) {
         this.nome = nome;
     }
 
     public void Depositar() {
-        System.out.println("Quanto você deseja depositar?");
-        double valor = sc.nextDouble();
+        valor=Double.parseDouble(JOptionPane.showInputDialog(null, "Quanto você deseja depositar?"));
+        
         while (valor <= 0) {
-            System.out.println("Valor de depósito inválido, insira outro valor.");
-            valor = sc.nextDouble();
+            valor=Double.parseDouble(JOptionPane.showInputDialog(null, "Quanto você deseja depositar?"));
         }
         this.saldo += valor;
-        System.out.println("Foi depositado um valor de R$" + valor + " na sua conta!");
-        System.out.println("Seu saldo agora é de R$" + this.saldo + "!");
+        JOptionPane.showMessageDialog(null,"Foi depositado um valor de R$" + valor + " na sua conta!" );
+        JOptionPane.showMessageDialog(null, "Seu saldo agora é de R$" + this.saldo + "!");   
     }
 
     public void Sacar() {
-        System.out.println("Quanto você deseja sacar?");
-        double valor = sc.nextDouble();
+        valor=Double.parseDouble(JOptionPane.showInputDialog(null,"Quanto você deseja sacar?"));
+
         while (valor > this.saldo || valor <= 0) {
-            System.out.println("Valor de saque inválido, tente novamente.");
-            valor = sc.nextDouble();
+            valor=Double.parseDouble(JOptionPane.showInputDialog(null,"Valor de saque inválido, tente novamente."));
+            
         }
         this.saldo -= valor;
-        System.out.println("Você sacou R$" + valor + ".");
-        System.out.println("Seu saldo agora é de R$" + this.saldo + "!");
+        JOptionPane.showMessageDialog(null,"Você sacou R$" + valor + ".");
+        JOptionPane.showMessageDialog(null, "Seu saldo agora é de R$" + this.saldo + "!");
+        
     }
 
 }

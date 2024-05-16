@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+import javax.swing.JOptionPane;
 
 
 public class Main {
@@ -8,38 +9,37 @@ public class Main {
         // Inicialização de variáveis
         Scanner sc = new Scanner(System.in);
         int escolha = 0;
-        String nome;
+        
 
         // Início Menu
-        System.out.println("**********************");
-        System.out.println("Bem vindo ao cassino!");
-        System.out.println("**********************");
-        System.out.println("Qual seu nome?");
-        nome = sc.nextLine();
+        JOptionPane.showMessageDialog(null,"******************************\n Bem vindo ao cassino! \n******************************" );
+        String nome = JOptionPane.showInputDialog(null,"Digite seu nome:");
+        
 
         User jogador1 = new User(nome);
 
-        System.out.println(
-                "Seu saldo é de R$" + jogador1.saldo + ". Você precisa de um valor inicial para começar a jogar.");
+        JOptionPane.showMessageDialog(null,"Seu saldo é de R$"+jogador1.saldo+"\nVocê precisa de um valor inicial para começar a jogar.");
+        
         jogador1.Depositar();
 
-        System.out.println("*************************************************************");
-        System.out.println("Olá " + jogador1.nome + "! Você tem R$" + jogador1.saldo + " disponiveis para jogar!");
+        JOptionPane.showMessageDialog(null,"Olá " + jogador1.nome + "! \nVocê tem R$" + jogador1.saldo + " disponiveis para jogar!");
+        
 
         // Escolha do jogo
         while (escolha != 5) {
-            System.out.println(
-                    "Escolha uma das seguintes opções:\n 1: Black Jack\n 2: Bac Bo\n 3: Depositar\n 4: Sacar\n 5: Sair");
-            escolha = sc.nextInt();
+            escolha=Integer.parseInt(JOptionPane.showInputDialog(null,"Escolha uma das seguintes opções:\n 1: Black Jack\n 2: Bac Bo\n 3: Depositar\n 4: Sacar\n 5: Sair"));
+            
 
             switch (escolha) {
                 case 1:
-                    System.out.println("Abrindo Black jack...");
+                    JOptionPane.showMessageDialog(null,"Abrindo Black jack...");
+                    //Abrindo o Black Jack
                     BlackJack.main(args);
                     
                     break;
                 case 2:
-                    System.out.println("Abrindo Bac bo...");
+                    JOptionPane.showMessageDialog(null,"Abrindo Bac bo...");
+                    
                     // abrir bac bo
                     break;
                 case 3:
@@ -49,12 +49,12 @@ public class Main {
                     jogador1.Sacar();
                     break;
                 case 5:
-                    System.out.println("Até a próxima!");
-                    System.out.println("Fechando sistema...");
+                    JOptionPane.showMessageDialog(null, "Até a proxima \n Fechando sistema...");
+                    
                     TimeUnit.SECONDS.sleep(2);
                     break;
                 default:
-                    System.out.println("Opção invalida");
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
                     break;
             }
 
