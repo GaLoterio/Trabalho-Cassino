@@ -4,6 +4,16 @@ public class User {
     String nome;
     double saldo = 1000;
     double valor;
+    int vitorias21 = 0;
+    int derrotas21 = 0;
+    int vitoriasBacBo = 0;
+    int derrotasBacBo = 0;
+    int vezesJogadas21 = 0;
+    int vezesJogadasBacBo = 0;
+    int empates21 = 0;
+    int vitorias = vitorias21 + vitoriasBacBo;
+    int derrotas = derrotas21 + derrotasBacBo;
+    
 
     public User(String nome) {
         this.nome = nome;
@@ -13,7 +23,7 @@ public class User {
         valor=Double.parseDouble(JOptionPane.showInputDialog(null, "Quanto você deseja depositar?"));
         
         while (valor <= 0) {
-            valor=Double.parseDouble(JOptionPane.showInputDialog(null, "Quanto você deseja depositar?"));
+            valor=Double.parseDouble(JOptionPane.showInputDialog(null, "Valor inválido! Insira outro valor!"));
         }
         this.saldo += valor;
         JOptionPane.showMessageDialog(null,"Foi depositado um valor de R$" + valor + " na sua conta!" );
