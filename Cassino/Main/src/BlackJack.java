@@ -9,6 +9,8 @@ public class BlackJack {
         String total = "";
         User jogador1 = new User("gustavo");
 
+        jogador1.vezesJogadas21 ++;
+
         int contador = 2;
         int maoJogador = 0;
         String nipe;
@@ -72,20 +74,19 @@ public class BlackJack {
 
         if (maoJogador == 21){
             mensagem = "Jogador ganhou!"+" R$" +dobrarAposta;
-            
+            jogador1.vitorias21 ++;
         } else if(maoJogador > 21){
             mensagem = "Você estourou!"+" R$" +perdeuAposta;
-            
+            jogador1.derrotas21 ++;
         } else if(diferencaJ > diferencaD) {
             mensagem = "Distribuidor ganhou";
-            
+            jogador1.derrotas21 ++;
         } else if (diferencaJ == diferencaD) {
             mensagem = "Empate"+" R$" +empateAposta;
-            
+            jogador1.empates21 ++;
         } else {
             mensagem = "Jogador ganhou"+" R$" +dobrarAposta;
-            
-
+            jogador1.vitorias21 ++;
         }
 
         JOptionPane.showMessageDialog(null, "A mão do distribuidor é " + maoDistribuidor);
