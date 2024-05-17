@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class BlackJack {
     public static void main(String[] args) {
- Random random = new Random();
+        Random random = new Random();
         String[] nipes = { "♠", "♥", "♦", "♣" };
         String[] faces = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Ás" };
         String total = "";
