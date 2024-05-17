@@ -2,12 +2,12 @@ import javax.swing.JOptionPane;
 import java.util.Random;
 
 public class BlackJack {
-    public static void main(String[] args) {
+    public static void main(String[] args, User jogador1) {
         Random random = new Random();
         String[] nipes = { "♠", "♥", "♦", "♣" };
         String[] faces = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Ás" };
         String total = "";
-        User jogador1 = new User("gustavo");
+        
 
         jogador1.vezesJogadas21 ++;
 
@@ -15,16 +15,19 @@ public class BlackJack {
         int maoJogador = 0;
         String nipe;
         String face;
+        int loop = 1;
 
         JOptionPane.showMessageDialog(null,"**************************************************\n               BEM VINDO AO BLACK JACK\n**************************************************","BEM VINDO",-1);
         JOptionPane.showMessageDialog(null,"BLACK JACK\nVocê receberá duas cartas e seu objetivo é chegar mais próximo de 21. \nCaso passe de 21 ou o distribuidor chegar mais perto de 21 você perde. \nCaso ganhe, o valor apostado será dobrado.","TUTORIAL",3);
 
         //Valor de aposta
         double valorAposta;
-                
-        valorAposta = Double.parseDouble(JOptionPane.showInputDialog(null,"Quanto você deseja apostar?"));
-        while (valorAposta > jogador1.saldo || valorAposta <= 0){
-           valorAposta = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor de aposta inválido, insira um valor válido:"));
+        
+        while (loop == 1) {
+
+            valorAposta = Double.parseDouble(JOptionPane.showInputDialog(null,"Quanto você deseja apostar?", "Jogo da Galera", -1));
+            while (valorAposta > jogador1.saldo || valorAposta <= 0){
+            valorAposta = Double.parseDouble(JOptionPane.showInputDialog(null, "Valor de aposta inválido, insira um valor válido:", "Jogo da Galera", -1));
         }
 
         //Atualiza o saldo do jogador apos a aposta
@@ -41,9 +44,9 @@ public class BlackJack {
             face = faces[random.nextInt(faces.length)];
             total = face + nipe;
             if (i == 1) {
-                JOptionPane.showMessageDialog(null, "Sua primeira carta é " + total);
+                JOptionPane.showMessageDialog(null, "Sua primeira carta é " + total, "Jogo da Galera", -1);
             } else {
-                JOptionPane.showMessageDialog(null, "Sua segunda carta é " + total);
+                JOptionPane.showMessageDialog(null, "Sua segunda carta é " + total, "Jogo da Galera", -1);
             }
             if (face.equals("Ás")) {
                 maoJogador += 11; // Ás vale 11 pontos inicialmente
@@ -53,13 +56,13 @@ public class BlackJack {
         }
 
         while (maoJogador < 21) {
-            int opcao = JOptionPane.showConfirmDialog(null, "Sua pontuação atual é " + maoJogador + ". Deseja pedir mais uma carta?");
+            int opcao = JOptionPane.showConfirmDialog(null, "Sua pontuação atual é " + maoJogador + ". Deseja pedir mais uma carta?", "Jogo da Galera", 0);
             if (opcao == JOptionPane.YES_OPTION) {
                 nipe = nipes[random.nextInt(4)];
                 face = faces[random.nextInt(faces.length)];
                 total = face + nipe;
                 maoJogador += Integer.parseInt(face); // Atualizar a pontuação do jogador
-                JOptionPane.showMessageDialog(null, "Você recebeu uma carta " + total);
+                JOptionPane.showMessageDialog(null, "Você recebeu uma carta " + total, "Jogo da Galera", -1);
             } else {
                 break;
             }
@@ -89,11 +92,25 @@ public class BlackJack {
             jogador1.vitorias21 ++;
         }
 
-        JOptionPane.showMessageDialog(null, "A mão do distribuidor é " + maoDistribuidor);
-        JOptionPane.showMessageDialog(null, mensagem);
-        JOptionPane.showMessageDialog(null, "Seu saldo agora é " + jogador1.saldo);
+       
+        JOptionPane.showMessageDialog(null, "A mão do distribuidor é " + maoDistribuidor, "Jogo da Galera", -1);
+        JOptionPane.showMessageDialog(null, mensagem, "Jogo da Galera", -1);
+        JOptionPane.showMessageDialog(null, "Seu saldo agora é " + jogador1.saldo, "Jogo da Galera", -1);
 
+        loop = JOptionPane.showConfirmDialog(null, "Deseja jogar novamente?", "Jogo da Galera?", JOptionPane.YES_NO_OPTION);
+        if (loop == JOptionPane.NO_OPTION) {
+            loop = 2;
+        }else {
+            loop = 1;
+        }
+
+        }
+
+        
     }
+
+
+        
 
     
        

@@ -1,16 +1,15 @@
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 import javax.swing.JOptionPane;
 
 public class BacBo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args, User jogador1) {
         Random rand = new Random();
         Scanner sc = new Scanner(System.in);
 
-        User jogador1 = new User("gustavo");
+        //User jogador1 = new User("gustavo");
         
         //inicializando variaveis
         int dado1A;
@@ -100,7 +99,8 @@ public class BacBo {
         }
 
         System.out.println("Fechando Bac Bo...");
-        //TimeUnit.SECONDS.sleep(2);
+
+        sc.close();
     }
 
 }
