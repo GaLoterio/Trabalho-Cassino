@@ -8,8 +8,6 @@ public class BlackJack {
         String[] faces = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Ás" };
         String total = "";
 
-        jogador1.vezesJogadas21++;
-
         int contador = 2;
         int maoJogador = 0;
         String nipe;
@@ -28,6 +26,7 @@ public class BlackJack {
 
         while (loop == 1) {
             maoJogador = 0;
+            jogador1.vezesJogadas21++;
 
             valorAposta = Double.parseDouble(
                     JOptionPane.showInputDialog(null, "Quanto você deseja apostar?", "Jogo da Galera", -1));
@@ -86,7 +85,7 @@ public class BlackJack {
                 jogador1.vitorias21++;
                 jogador1.saldo += dobrarAposta;
             } else if (maoJogador > 21) {
-                mensagem = maoJogador+" Você estourou! Perdeu R$" + valorAposta;
+                mensagem = maoJogador + " Você estourou! Perdeu R$" + valorAposta;
                 jogador1.derrotas21++;
             } else if (diferencaJ > diferencaD) {
                 mensagem = "Distribuidor ganhou Você perdeu R$" + valorAposta;
@@ -110,7 +109,6 @@ public class BlackJack {
             if (loop == JOptionPane.NO_OPTION) {
                 loop = 2;
             } else {
-                jogador1.vezesJogadas21++;
                 loop = 1;
             }
 
