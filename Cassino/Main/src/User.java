@@ -2,15 +2,15 @@ import javax.swing.JOptionPane;
 
 public class User {
     String nome;
-    double saldo = 0;
+    double saldo;
     double valor;
-    int vitorias21 = 0;
-    int derrotas21 = 0;
-    int vitoriasBacBo = 0;
-    int derrotasBacBo = 0;
-    int vezesJogadas21 = 0;
-    int vezesJogadasBacBo = 0;
-    int empates21 = 0;
+    int vitorias21;
+    int derrotas21;
+    int vitoriasBacBo;
+    int derrotasBacBo;
+    int vezesJogadas21;
+    int vezesJogadasBacBo;
+    int empates21;
     int vitorias = vitorias21 + vitoriasBacBo;
     int derrotas = derrotas21 + derrotasBacBo;
 
