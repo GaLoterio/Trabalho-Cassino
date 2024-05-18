@@ -9,9 +9,9 @@ public class BacBo {
         Random rand = new Random();
         Scanner sc = new Scanner(System.in);
 
-        //User jogador1 = new User("gustavo");
-        
-        //inicializando variaveis
+        // User jogador1 = new User("gustavo");
+
+        // inicializando variaveis
         int dado1A;
         int dado2A;
         int dado1V;
@@ -23,10 +23,11 @@ public class BacBo {
         System.out.println("*******************");
         System.out.println("Bem vindo ao Bac Bo!");
         System.out.println("*******************");
-        JOptionPane.showMessageDialog(null, "Bac Bo é um jogo de dados onde você pode apostar numa cor, ou no empate.\n Os dados serão rolados, e a soma dos dados da sua cor for maior que a soma dos dados da outra cor, você ganha.");
+        JOptionPane.showMessageDialog(null,
+                "Bac Bo é um jogo de dados onde você pode apostar numa cor, ou no empate.\n Os dados serão rolados, e a soma dos dados da sua cor for maior que a soma dos dados da outra cor, você ganha.");
 
         while (loop == 1) {
-            jogador1.vezesJogadasBacBo ++;
+            jogador1.vezesJogadasBacBo++;
 
             System.out.println("Vamos jogar! Deseja apostar no AZUL, VERMELHO ou no EMPATE?");
             System.out.println("1: Azul \n2: Vermelho \n3: Empate");
@@ -73,21 +74,21 @@ public class BacBo {
                 System.out.println("Parabens voce ganhou!");
                 jogador1.saldo += aposta * 2;
                 System.out.println("Você ganhou " + aposta * 2 + " e seu novo saldo é de: R$" + jogador1.saldo + "!");
-                jogador1.vitoriasBacBo +=1;
+                jogador1.vitoriasBacBo += 1;
             } else if (vitoriaVermelho == true && escolha == 2) {
                 System.out.println("Parabens voce ganhou!");
                 jogador1.saldo += aposta * 2;
                 System.out.println("Você ganhou " + aposta * 2 + " e seu novo saldo é de: R$" + jogador1.saldo + "!");
-                jogador1.vitoriasBacBo +=1;
+                jogador1.vitoriasBacBo += 1;
             } else if (empate == true && escolha == 3) {
                 System.out.println("Parabens voce ganhou!");
                 jogador1.saldo += aposta * 5;
                 System.out.println("Você ganhou " + aposta * 5 + " e seu novo saldo é de: R$" + jogador1.saldo + "!");
-                jogador1.vitoriasBacBo +=1;
+                jogador1.vitoriasBacBo += 1;
             } else {
                 System.out.println("Infelizmente voce perdeu!");
                 System.out.println("Você perdeu R$" + aposta + "! Seu novo saldo é de R$" + jogador1.saldo + "!");
-                jogador1.derrotasBacBo +=1;
+                jogador1.derrotasBacBo += 1;
             }
 
             System.out.println("Dados azuis: " + totalAzul);
