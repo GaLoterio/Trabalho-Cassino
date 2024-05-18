@@ -9,8 +9,6 @@ public class BacBo {
         Random rand = new Random();
         Scanner sc = new Scanner(System.in);
 
-        // User jogador1 = new User("gustavo");
-
         // inicializando variaveis
         int dado1A;
         int dado2A;

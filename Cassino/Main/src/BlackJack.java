@@ -27,7 +27,6 @@ public class BlackJack {
         double valorAposta;
 
         while (loop == 1) {
-
             maoJogador = 0;
 
             valorAposta = Double.parseDouble(
@@ -87,7 +86,7 @@ public class BlackJack {
                 jogador1.vitorias21++;
                 jogador1.saldo += dobrarAposta;
             } else if (maoJogador > 21) {
-                mensagem = "Você estourou! Perdeu R$" + valorAposta;
+                mensagem = maoJogador+" Você estourou! Perdeu R$" + valorAposta;
                 jogador1.derrotas21++;
             } else if (diferencaJ > diferencaD) {
                 mensagem = "Distribuidor ganhou Você perdeu R$" + valorAposta;
@@ -111,6 +110,7 @@ public class BlackJack {
             if (loop == JOptionPane.NO_OPTION) {
                 loop = 2;
             } else {
+                jogador1.vezesJogadas21++;
                 loop = 1;
             }
 
