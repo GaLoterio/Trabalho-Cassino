@@ -37,11 +37,9 @@ public class BlackJack {
 
             // Atualiza o saldo do jogador apos a aposta
 
-            // double novoValor = jogador1.saldo - valorAposta;
             jogador1.saldo -= valorAposta;
 
             double dobrarAposta = valorAposta * 2;
-            // double perdeuAposta = valorAposta;
             double empateAposta = valorAposta / 2;
 
             for (int i = 1; i <= contador; i++) {

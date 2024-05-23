@@ -29,9 +29,9 @@ public class Main {
         // + jogador1.saldo + " disponiveis para jogar!", "Jogo da Galera", -1);
 
         // Escolha do jogo
-        while (escolha != 6) {
+        while (escolha != 7) {
             escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "Escolha uma das seguintes opções:\n 1: Black Jack\n 2: Bac Bo\n 3: Depositar\n 4: Sacar\n 5: Estatísticas\n 6: Sair",
+                    "Escolha uma das seguintes opções:\n 1: Black Jack\n 2: Bac Bo\n 3: Depositar\n 4: Sacar\n 5: Estatísticas\n 6: Ver Saldo \n7: Sair",
                     "Jogo da Galera", -1));
 
             switch (escolha) {
@@ -78,6 +78,9 @@ public class Main {
 
                     break;
                 case 6:
+                    JOptionPane.showMessageDialog(null,"Seu saldo é R$"+jogador1.saldo,"Saldo",-1);
+                    break;
+                case 7:
                     JOptionPane.showMessageDialog(null, "Até a proxima \n Fechando sistema...", "Jogo da Galera", -1);
                     TimeUnit.SECONDS.sleep(2);
                     break;
