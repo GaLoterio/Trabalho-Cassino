@@ -65,8 +65,13 @@ public class BlackJack {
                     nipe = nipes[random.nextInt(4)];
                     face = faces[random.nextInt(faces.length)];
                     total = face + nipe;
-                    maoJogador += Integer.parseInt(face); // Atualizar a pontuação do jogador
-                    JOptionPane.showMessageDialog(null, "Você recebeu uma carta " + total, "Jogo da Galera", -1);
+                    if (face.equals("Ás")) {
+                        maoJogador += 11;
+                        JOptionPane.showMessageDialog(null, "Você recebeu uma carta " + total, "Jogo da Galera", -1);
+                    } else {
+                        maoJogador += Integer.parseInt(face); // Atualizar a pontuação do jogador
+                        JOptionPane.showMessageDialog(null, "Você recebeu uma carta " + total, "Jogo da Galera", -1);
+                    }
                 } else {
                     break;
                 }
@@ -83,12 +88,12 @@ public class BlackJack {
                 jogador1.vitorias21++;
                 jogador1.saldo += dobrarAposta;
             } else if (maoJogador > 21) {
-                mensagem = maoJogador + " Você estourou! Perdeu R$" + valorAposta;
+                mensagem = "Você estourou! Perdeu R$" + valorAposta;
                 jogador1.derrotas21++;
             } else if (diferencaJ > diferencaD) {
-                mensagem = "Distribuidor ganhou Você perdeu R$" + valorAposta;
+                mensagem = "Distribuidor ganhou! Você perdeu R$" + valorAposta;
                 jogador1.derrotas21++;
-            } else if (diferencaJ == diferencaD) {
+            } else if (maoDistribuidor == maoJogador) {
                 mensagem = "Empate! Você ganhou R$" + empateAposta;
                 jogador1.empates21++;
                 jogador1.saldo += empateAposta;
@@ -98,7 +103,9 @@ public class BlackJack {
                 jogador1.saldo += dobrarAposta;
             }
 
-            JOptionPane.showMessageDialog(null, "A mão do distribuidor é " + maoDistribuidor, "Jogo da Galera", -1);
+            JOptionPane.showMessageDialog(null,
+                    "A mão do distribuidor é " + maoDistribuidor + " e a sua mão é " + maoJogador, "Jogo da Galera",
+                    -1);
             JOptionPane.showMessageDialog(null, mensagem, "Jogo da Galera", -1);
             JOptionPane.showMessageDialog(null, "Seu saldo agora é " + jogador1.saldo, "Jogo da Galera", -1);
 

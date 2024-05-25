@@ -27,6 +27,11 @@ public class BacBo {
             escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
                     "Vamos jogar! Deseja apostar no:\n 1: Azul 2: Vermelho 3: Empate",
                     "Jogo da Galera", -1));
+            while (escolha > 3 || escolha < 1) {
+                escolha = Integer.parseInt(JOptionPane.showInputDialog(null,
+                        "Escolha inválida, tente novamente:\n 1: Azul 2: Vermelho 3: Empate",
+                        "Jogo da Galera", -1));
+            }
 
             aposta = Double.parseDouble(
                     JOptionPane.showInputDialog(null, "Quanto você deseja apostar?", "Jogo da Galera", -1));
