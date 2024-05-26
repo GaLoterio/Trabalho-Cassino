@@ -19,7 +19,8 @@ public class BacBo {
                 "**************************************************\n                BEM VINDO AO BACBO\n**************************************************",
                 "BEM VINDO", -1);
         JOptionPane.showMessageDialog(null,
-                "Bac Bo é um jogo de dados onde você pode apostar numa cor, ou no empate.\n Os dados serão rolados, e se a soma dos dados da sua cor for maior que\n a soma dos dados da outra cor, você ganha.");
+                "Bac Bo é um jogo de dados onde você pode apostar numa cor, ou no empate.\n Os dados serão rolados, e se a soma dos dados da sua cor for maior que\n a soma dos dados da outra cor, você ganha.",
+                "TUTORIAL", 3);
 
         while (loop == 1) {
             jogador1.vezesJogadasBacBo++;

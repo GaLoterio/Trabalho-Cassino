@@ -57,25 +57,30 @@ public class Main {
                     break;
                 case 5:
                     // mostrar estatisticas
-                    opcao = Double.parseDouble(JOptionPane.showInputDialog(null,
-                            "Deseja acessar as estatísticas de qual jogo?\n 1: BlackJack  2: BacBo  3: Ambos",
-                            "Jogo da Galera", -1));
-                    if (opcao == 1) {
-                        JOptionPane.showMessageDialog(null, "Vezes jogadas: " + jogador1.vezesJogadas21 +
-                                "\nVitórias: " + jogador1.vitorias21 +
-                                "\nDerrotas: " + jogador1.derrotas21 +
-                                "\nEmpates: " + jogador1.empates21, "Jogo da Galera", -1);
-                    } else if (opcao == 2) {
-                        JOptionPane.showMessageDialog(null, "Vezes jogadas: " + jogador1.vezesJogadasBacBo +
-                                "\nVitórias: " + jogador1.vitoriasBacBo +
-                                "\nDerrotas: " + jogador1.derrotasBacBo, "Jogo da Galera", -1);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Vezes jogadas: " + jogador1.vezesJogadas21 +
-                                "\nVitórias: " + jogador1.vitorias +
-                                "\nDerrotas: " + jogador1.derrotas +
-                                "\nEmpates: " + jogador1.empates21, "Jogo da Galera", -1);
+                    while(true) {
+                        opcao = Double.parseDouble(JOptionPane.showInputDialog(null,
+                                "Deseja acessar as estatísticas de qual jogo?\n 1: BlackJack  2: BacBo  3: Ambos",
+                                "Jogo da Galera", -1));
+                        if (opcao == 1) {
+                            JOptionPane.showMessageDialog(null, "Vezes jogadas: " + jogador1.vezesJogadas21 +
+                                    "\nVitórias: " + jogador1.vitorias21 +
+                                    "\nDerrotas: " + jogador1.derrotas21 +
+                                    "\nEmpates: " + jogador1.empates21, "Jogo da Galera", -1);
+                        } else if (opcao == 2) {
+                            JOptionPane.showMessageDialog(null, "Vezes jogadas: " + jogador1.vezesJogadasBacBo +
+                                    "\nVitórias: " + jogador1.vitoriasBacBo +
+                                    "\nDerrotas: " + jogador1.derrotasBacBo, "Jogo da Galera", -1);
+                        } else if (opcao == 3) {
+                            JOptionPane.showMessageDialog(null, "Vezes jogadas: " + jogador1.vezesJogadas21 +
+                                    "\nVitórias: " + jogador1.vitorias +
+                                    "\nDerrotas: " + jogador1.derrotas +
+                                    "\nEmpates: " + jogador1.empates21, "Jogo da Galera", -1);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Opção inválida! Tente novamente.", "Jogo da Galera", -1);
+                            continue;
+                        }
+                        break;
                     }
-
                     break;
                 case 6:
                     JOptionPane.showMessageDialog(null, "Seu saldo é R$" + jogador1.saldo, "Saldo", -1);
