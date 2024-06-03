@@ -11,11 +11,21 @@ public class User {
     int vezesJogadas21;
     int vezesJogadasBacBo;
     int empates21;
-    int vitorias = vitorias21 + vitoriasBacBo;
-    int derrotas = derrotas21 + derrotasBacBo;
 
     public User(String nome) {
         this.nome = nome;
+    }
+
+    public int getTotalVitorias() {
+        return vitorias21 + vitoriasBacBo;
+    }
+
+    public int getTotalDerrotas() {
+        return derrotas21 + derrotasBacBo;
+    }
+
+    public int getTotalVezesJogadas() {
+        return vezesJogadas21 + vezesJogadasBacBo;
     }
 
     public void Depositar() {

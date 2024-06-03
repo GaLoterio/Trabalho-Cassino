@@ -58,7 +58,7 @@ public class Main {
                 case 5:
                     // mostrar estatisticas
                     while(true) {
-                        opcao = Double.parseDouble(JOptionPane.showInputDialog(null,
+                        opcao = Integer.parseInt(JOptionPane.showInputDialog(null,
                                 "Deseja acessar as estatísticas de qual jogo?\n 1: BlackJack  2: BacBo  3: Ambos",
                                 "Jogo da Galera", -1));
                         if (opcao == 1) {
@@ -71,9 +71,9 @@ public class Main {
                                     "\nVitórias: " + jogador1.vitoriasBacBo +
                                     "\nDerrotas: " + jogador1.derrotasBacBo, "Jogo da Galera", -1);
                         } else if (opcao == 3) {
-                            JOptionPane.showMessageDialog(null, "Vezes jogadas: " + jogador1.vezesJogadas21 +
-                                    "\nVitórias: " + jogador1.vitorias +
-                                    "\nDerrotas: " + jogador1.derrotas +
+                            JOptionPane.showMessageDialog(null, "Vezes jogadas: " + jogador1.getTotalVezesJogadas() +
+                                    "\nVitórias: " + jogador1.getTotalVitorias() +
+                                    "\nDerrotas: " + jogador1.getTotalDerrotas() +
                                     "\nEmpates: " + jogador1.empates21, "Jogo da Galera", -1);
                         } else {
                             JOptionPane.showMessageDialog(null, "Opção inválida! Tente novamente.", "Jogo da Galera", -1);
