@@ -10,7 +10,7 @@ public class User {
     int derrotasBacBo;
     int vezesJogadas21;
     int vezesJogadasBacBo;
-    int empates21;
+    int empates21;  
 
     public User(String nome) {
         this.nome = nome;
